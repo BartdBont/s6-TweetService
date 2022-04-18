@@ -2,10 +2,7 @@ package com.bart.TweetService.Controllers;
 
 import com.bart.TweetService.Models.Tweet;
 import com.bart.TweetService.Services.TweetService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.UUID;
@@ -27,5 +24,10 @@ public class TweetController {
     @GetMapping("/{id}")
     public Tweet findById(@PathVariable UUID id) {
         return tweetService.findById(id);
+    }
+
+    @PostMapping
+    public Tweet create(@RequestBody Tweet tweet) {
+        return tweetService.save(tweet);
     }
 }

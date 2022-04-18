@@ -23,4 +23,8 @@ public class TweetService {
     public Tweet findById(UUID id) {
         return tweetRepository.findById(id).orElseThrow(() -> new TweetNotFoundException());
     }
+
+    public Tweet save(Tweet tweet) {
+        return tweetRepository.save(tweet);
+    }
 }
