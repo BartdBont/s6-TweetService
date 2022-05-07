@@ -1,4 +1,9 @@
 spring:
+  cloud:
+    stream:
+      bindings:
+        userDeleted-in-0:
+          destination: users.delete
   application:
     name: tweet-service
 server:
@@ -6,4 +11,4 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:9000/eureka
+      defaultZone: http://localhost:8761/eureka
