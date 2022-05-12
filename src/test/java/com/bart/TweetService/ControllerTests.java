@@ -13,6 +13,7 @@ public class ControllerTests {
     @Autowired
     private TweetController tweetController;
 
+    //initial test
     @Test
     public void contextLoadsController() {
          assertNotNull(tweetController);
