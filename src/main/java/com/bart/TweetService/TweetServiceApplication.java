@@ -12,7 +12,6 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
-@EnableEurekaClient
 public class TweetServiceApplication {
 	private static final Logger log = LoggerFactory.getLogger(TweetServiceApplication.class);
 

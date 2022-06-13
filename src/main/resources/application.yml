@@ -6,9 +6,3 @@ spring:
           destination: users.delete
   application:
     name: tweet-service
-server:
-  port: 9001
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka
