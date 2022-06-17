@@ -5,14 +5,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.security.servlet.SecurityAutoConfiguration;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 import java.util.UUID;
 import java.util.function.Consumer;
 
 @SpringBootApplication(exclude = SecurityAutoConfiguration.class)
-@EnableEurekaClient
 public class TweetServiceApplication {
 	private static final Logger log = LoggerFactory.getLogger(TweetServiceApplication.class);
 
@@ -23,7 +21,7 @@ public class TweetServiceApplication {
 	@Bean
 	Consumer<UUID> userDeleted() {
 		return id -> {
-			log.info(id.toString());
+			log.info(String.format("tweets from user with ID:%s deleted", id.toString()));
 		};
 	}
 
