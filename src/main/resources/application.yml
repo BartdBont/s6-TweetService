@@ -1,3 +1,10 @@
 spring:
+  cloud:
+    stream:
+      bindings:
+        userDeleted-in-0:
+          destination: users.delete
   application:
     name: tweet-service
+server:
+  port: 9001
